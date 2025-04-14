@@ -79,7 +79,7 @@ const studentTDofValue = document.getElementById('studentTDofValue');
     let lastFrameTime = Date.now();
 
 const themeToggleBtn = document.getElementById('themeToggleBtn');
-let isDarkMode = true;
+let isDarkMode = false;
 
 
 
@@ -1560,9 +1560,13 @@ studentTDof.addEventListener('input', function() {
     }
     
 
-if (localStorage.getItem('darkMode') === 'true') {
+if (localStorage.getItem('darkMode') === 'false') {
+    disableDarkMode();
+}
+else{
     enableDarkMode();
 }
+
     resizeCanvas();
     window.addEventListener('resize', resizeCanvas);
 });
