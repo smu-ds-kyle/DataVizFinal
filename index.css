@@ -1,0 +1,336 @@
+body {
+    min-height: 100vh;
+}
+
+.sidebar {
+    background-color: #f8f9fa;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-top: 20px;
+    border-right: 1px solid #dee2e6;
+    z-index: 100;
+    overflow-y: auto;
+}
+
+.nav-link {
+    color: #495057;
+    border-radius: 0.25rem;
+    margin-bottom: 5px;
+}
+
+.nav-link:hover {
+    background-color: #e9ecef;
+}
+
+.nav-link.active {
+    background-color: #0d6efd;
+    color: white;
+}
+
+.content {
+    padding: 20px;
+}
+
+.nav-header {
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    color: #6c757d;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.distributions-nav {
+    border-top: 1px solid #dee2e6;
+    margin-top: 0.5rem;
+    padding-top: 0.5rem;
+}
+
+.button-section {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+    padding: 15px 0;
+    margin-bottom: 20px;
+}
+
+#simulation-canvas {
+    display: block;
+    margin: 0 auto;
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+}
+
+.slider-container {
+    margin-bottom: 15px;
+}
+
+.slider-container label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.slider-value {
+    display: inline-block;
+    width: 50px;
+    text-align: right;
+    margin-left: 10px;
+}
+
+.chart-container {
+    height: 250px;
+    position: relative;
+}
+
+
+#pdfChart.chart-container {
+    height: 250px;
+}
+
+
+#distributionChart.chart-container {
+    height: 250px;
+}
+
+
+#histogramChart.chart-container {
+    height: 250px;
+}
+
+
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+body.dark-mode .sidebar {
+    background-color: #1e1e1e;
+    border-right-color: #333;
+}
+
+body.dark-mode .nav-link {
+    color: #b0b0b0;
+}
+
+body.dark-mode .nav-link:hover {
+    background-color: #2a2a2a;
+}
+
+body.dark-mode .nav-link.active {
+    background-color: #0d6efd;
+    color: white;
+}
+
+body.dark-mode .card {
+    background-color: #1e1e1e;
+    border-color: #333;
+}
+
+body.dark-mode .card-header {
+    background-color: #252525;
+    border-bottom-color: #333;
+}
+
+body.dark-mode .button-section {
+    background-color: #1e1e1e;
+    border-bottom-color: #333;
+}
+
+body.dark-mode #simulation-canvas {
+    background-color: #1e1e1e;
+    border-color: #333;
+}
+
+body.dark-mode .slider-container label {
+    color: #b0b0b0;
+}
+
+body.dark-mode .nav-header {
+    color: #909090;
+}
+
+body.dark-mode .form-range::-webkit-slider-thumb {
+    background-color: #0d6efd;
+}
+
+body.dark-mode .form-select {
+    background-color: #2a2a2a;
+    color: #e0e0e0;
+    border-color: #444;
+}
+
+body.dark-mode .form-select option {
+    background-color: #2a2a2a;
+    color: #e0e0e0;
+}
+
+
+body.dark-mode .card-header {
+    background-color: #252525;
+    border-bottom-color: #333;
+    color: #e0e0e0;
+}
+
+body.dark-mode .card-body {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+}
+
+body.dark-mode .card-title {
+    color: #e0e0e0;
+}
+
+
+body.dark-mode .button-section {
+    background-color: #1e1e1e;
+    border-bottom-color: #333;
+}
+
+
+body.dark-mode .sidebar h4 {
+    color: #e0e0e0;
+}
+
+body.dark-mode .statistics p {
+    color: #b0b0b0;
+}
+
+
+body.dark-mode .btn-outline-secondary {
+    color: #b0b0b0;
+    border-color: #555;
+}
+
+body.dark-mode .btn-outline-secondary:hover {
+    background-color: #333;
+    color: #e0e0e0;
+}
+
+.form-range::-webkit-slider-thumb {
+    background-color: #0d6efd;
+    border: 0;
+    border-radius: 1rem;
+    -webkit-appearance: none;
+    appearance: none;
+    width: 1rem;
+    height: 1rem;
+    cursor: pointer;
+}
+
+.form-range::-moz-range-thumb {
+    background-color: #0d6efd;
+    border: 0;
+    border-radius: 1rem;
+    -moz-appearance: none;
+    appearance: none;
+    width: 1rem;
+    height: 1rem;
+    cursor: pointer;
+}
+
+
+.form-range::-webkit-slider-runnable-track {
+    background-color: #dee2e6;
+    border-radius: 0.25rem;
+    height: 0.5rem;
+}
+
+.form-range::-moz-range-track {
+    background-color: #dee2e6;
+    border-radius: 0.25rem;
+    height: 0.5rem;
+}
+
+
+body.dark-mode .form-range::-webkit-slider-runnable-track {
+    background-color: #444;
+}
+
+body.dark-mode .form-range::-moz-range-track {
+    background-color: #444;
+}
+
+
+.copyright-text {
+    color: #6c757d; 
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+
+body.dark-mode .copyright-text {
+    color: #adb5bd; 
+}
+
+
+body.dark-mode .sidebar {
+    background-color: #1e1e1e;
+}
+
+
+body.dark-mode .sidebar > div:last-child {
+    background-color: #1e1e1e;
+}
+
+
+.modal-content {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.modal-header {
+    border-bottom: 1px solid #e9ecef;
+}
+
+.modal-footer {
+    border-top: 1px solid #e9ecef;
+}
+
+
+body.dark-mode .modal-content {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    border-color: #333;
+}
+
+body.dark-mode .modal-header {
+    border-bottom-color: #333;
+}
+
+body.dark-mode .modal-footer {
+    border-top-color: #333;
+}
+
+body.dark-mode .modal-title {
+    color: #e0e0e0;
+}
+
+body.dark-mode .modal-body {
+    color: #b0b0b0;
+}
+
+body.dark-mode .modal-body ol {
+    color: #b0b0b0;
+}
+
+
+body.dark-mode .modal .btn-secondary {
+    background-color: #555;
+    color: #e0e0e0;
+    border-color: #666;
+}
+
+body.dark-mode .modal .btn-secondary:hover {
+    background-color: #666;
+}
+
+@media (max-width: 767.98px) {
+    .sidebar {
+        position: static;
+        height: auto;
+        border-right: none;
+        border-bottom: 1px solid #dee2e6;
+        margin-bottom: 20px;
+    }
+}
