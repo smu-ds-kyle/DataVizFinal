@@ -18,7 +18,7 @@
                 </div>
                 <div class="modal-body">
                     <p>Thank you for visiting my project site!</p>
-                    <p>This site aims to help you explore and vizualize various statistical distributions dymaically and in real-time.  </p>
+                    <p>This site aims to help you explore and vizualize various statistical distributions dynamically and in real-time.</p>
                     <p>Libraries used</p>
                     <ol>
                         <li>Bootstrap</li>
@@ -38,40 +38,37 @@
         <div class="row">
            
             <div class="col-md-3 col-lg-2 sidebar">
-                <h4 class="px-3 mb-4">D3 Statistic Simulations</h4>
+                <h4 class="px-3 mb-4">D3 Distribution Simulations</h4>
                 <div class="nav flex-column">
-                    <!-- Distribution Section -->
                     <div class="distributions-nav">
                         <span class="nav-header">Distribution</span>
                         <div class="px-3 mb-3">
                             <select class="form-select form-select-sm" id="distributionSelect">
-                                <option value="uniform">Uniform</option>
                                 <option value="normal">Normal</option>
+                                <option value="uniform">Uniform</option>
+                                
                                 <option value="poisson">Poisson</option>
                                 <option value="gamma">Gamma</option>
                                 <option value="binomial">Binomial</option>
                                 <option value="exponential">Exponential</option>
-                                <option value="student-t">Student's t</option>
+                                <option value="student">Student's t</option>
                             </select>
                         </div>
                         
-                        <!-- Distribution-specific parameters (shown/hidden based on selection) -->
                         <div class="px-3 mb-3">
-                            <!-- Uniform Parameters -->
                             <div class="distribution-params" id="uniform-params">
                                 <div class="slider-container mb-2">
-                                    <label for="uniformMin" class="small">Min: <span class="slider-value" id="uniformMinValue">0</span></label>
-                                    <input type="range" class="form-range" id="uniformMin" min="-20" max="20" step="0.1" value="0">
+                                    <label for="uniformMin" class="small">Min: <span class="slider-value" id="uniformMinValue">1</span></label>
+                                    <input type="range" class="form-range" id="uniformMin" min="-19" max="19" step="2" value="1">
                                 </div>
                                 <div class="slider-container mb-2">
-                                    <label for="uniformMax" class="small">Max: <span class="slider-value" id="uniformMaxValue">1</span></label>
-                                    <input type="range" class="form-range" id="uniformMax" min="-20" max="20" step="0.1" value="1">
+                                    <label for="uniformMax" class="small">Max: <span class="slider-value" id="uniformMaxValue">10</span></label>
+                                    <input type="range" class="form-range" id="uniformMax" min="-20" max="20" step="2" value="10">
                                 </div>
                             </div>
                             
 
                             
-                            <!-- Normal Parameters -->
                             <div class="distribution-params" id="normal-params" style="display: none;">
                                 <div class="slider-container mb-2">
                                     <label for="normalMean" class="small">Mean: <span class="slider-value" id="normalMeanValue">0</span></label>
@@ -83,7 +80,6 @@
                                 </div>
                             </div>
                             
-                            <!-- Poisson Parameters -->
                             <div class="distribution-params" id="poisson-params" style="display: none;">
                                 <div class="slider-container">
                                     <label for="poissonLambda" class="small">Lambda: <span class="slider-value" id="poissonLambdaValue">5</span></label>
@@ -91,7 +87,6 @@
                                 </div>
                             </div>
                             
-                            <!-- Gamma Parameters -->
                             <div class="distribution-params" id="gamma-params" style="display: none;">
                                 <div class="slider-container mb-2">
                                     <label for="gammaAlpha" class="small">Shape (α): <span class="slider-value" id="gammaAlphaValue">2</span></label>
@@ -103,7 +98,6 @@
                                 </div>
                             </div>
                             
-                            <!-- Binomial Parameters -->
                             <div class="distribution-params" id="binomial-params" style="display: none;">
                                 <div class="slider-container mb-2">
                                     <label for="binomialN" class="small">Trials (n): <span class="slider-value" id="binomialNValue">10</span></label>
@@ -115,48 +109,44 @@
                                 </div>
                             </div>
                             
-                            <!-- Exponential Parameters -->
                             <div class="distribution-params" id="exponential-params" style="display: none;">
                                 <div class="slider-container">
                                     <label for="exponentialRate" class="small">Rate (λ): <span class="slider-value" id="exponentialRateValue">1</span></label>
                                     <input type="range" class="form-range" id="exponentialRate" min="0.1" max="5" step="0.1" value="1">
                                 </div>
                             </div>
-                            <!-- Student's t Parameters -->
-                        <div class="distribution-params" id="student-t-params" style="display: none;">
-   
-                         <div class="slider-container">
-                        <label for="studentTDof" class="small">Degrees of Freedom: <span class="slider-value" id="studentTDofValue">3</span></label>
-                            <input type="range" class="form-range" id="studentTDof" min="3" max="50" step="1" value="3">
-                         </div>
-                        </div>
+                            <div class="distribution-params" id="student-params" style="display: none;">
+                                <div class="slider-container">
+                                <label for="studentTDof" class="small">Degrees of Freedom: <span class="slider-value" id="studentTDofValue">3</span></label>
+                                   <input type="range" class="form-range" id="studentTDof" min="3" max="50" step="1" value="3">
+                                </div>
+                             </div>
                             
                         </div>
                     </div>
                     
-                    <!-- Controls Section -->
                     <div class="distributions-nav">
                         <span class="nav-header">Simulation Controls</span>
                         
                         <div class="px-3 py-2">
                             <div class="slider-container">
-                                <label for="numLanes" class="small">Number of Lanes: <span class="slider-value" id="numLanesValue">21</span></label>
-                                <input type="range" class="form-range" id="numLanes" min="5" max="101" step="2" value="21">
+                                <label for="numLanes" class="small">Number of Lanes: <span class="slider-value" id="numLanesValue">51</span></label>
+                                <input type="range" class="form-range" id="numLanes" min="5" max="101" step="2" value="51">
                             </div>
                             
                             <div class="slider-container mt-3">
-                                <label for="ballSpeed" class="small">Ball Speed: <span class="slider-value" id="ballSpeedValue">5</span></label>
-                                <input type="range" class="form-range" id="ballSpeed" min="5" max="100" step="5" value="5">
+                                <label for="ballSpeed" class="small">Ball Speed: <span class="slider-value" id="ballSpeedValue">30</span></label>
+                                <input type="range" class="form-range" id="ballSpeed" min="5" max="100" step="5" value="30">
                             </div>
                             
                             <div class="slider-container mt-3">
-                                <label for="genRate" class="small">Generation Rate: <span class="slider-value" id="genRateValue">50</span> ball/sec</label>
-                                <input type="range" class="form-range" id="genRate" min="5" max="500" step="5" value="50">
+                                <label for="genRate" class="small">Generation Rate: <span class="slider-value" id="genRateValue">10</span> ball/sec</label>
+                                <input type="range" class="form-range" id="genRate" min="5" max="500" step="5" value="10">
                             </div>
                             
                             <div class="slider-container mt-3">
                                 <label for="ballLifetime" class="small">Ball Lifetime: <span class="slider-value" id="ballLifetimeValue">5</span> sec</label>
-                                <input type="range" class="form-range" id="ballLifetime" min="1" max="60" value="5">
+                                <input type="range" class="form-range" id="ballLifetime" min="1" max="120" value="5">
                             </div>
                             
                             <div class="slider-container mt-3">
@@ -177,9 +167,7 @@
                 </div>
             </div>
             
-            <!-- Main Content Area -->
             <div class="col-md-9 col-lg-10 ms-sm-auto">
-                <!-- Top Row for Buttons -->
                 <div class="row button-section">
                     <div class="col-12">
                         <div class="d-flex justify-content-between align-items-center px-3">
@@ -199,7 +187,6 @@
                 </div>
                 
                 <div class="content">
-                    <!-- Middle Row with Three Sections Side by Side -->
                     <div class="row mb-4">
                        
                         <div class="col-md-4 mb-4">
@@ -213,7 +200,6 @@
                             </div>
                         </div>
                         
-                        <!-- Middle Section - Theoretical Distribution Histogram -->
                         <div class="col-md-4 mb-4">
                             <div class="card h-100">
                                 <div class="card-header">
@@ -263,6 +249,10 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
    
+   
+    <script src="DistributionManager.js"></script>
+    <script src="ChartManager.js"></script>
+    <script src="SimulationApp.js"></script>
     <script src="index.js"></script>
 </body>
 </html>

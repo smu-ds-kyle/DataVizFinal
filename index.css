@@ -1,34 +1,129 @@
-body {
-    min-height: 100vh;
+/* START OF FILE index.css */
+
+/* Color Variables and Theme Management */
+:root {
+    /* Light mode colors */
+    --color-bg-primary: #ffffff;
+    --color-bg-secondary: #f8f9fa;
+    --color-text-primary: #212529;
+    --color-text-secondary: #6c757d;
+    --color-text-muted: #495057;
+    --color-border: #dee2e6;
+    --color-border-dark: #ced4da;
+    --color-hover-bg: #e9ecef;      /* Hover background color */
+
+    /* Slider Colors (Light) */
+    --color-slider-thumb: #0d6efd;  /* Primary blue */
+    --color-slider-track: #adb5bd; /* Light Gray track */
+
+    /* Button Colors (Light Mode) */
+    --color-btn-primary: #0d6efd;         /* Bootstrap Blue */
+    --color-btn-primary-hover: #0b5ed7;   /* Darker Blue */
+    --color-btn-primary-text: white;
+
+    --color-btn-danger: #dc3545;          /* Bootstrap Red */
+    --color-btn-danger-hover: #bb2d3b;    /* Darker Red */
+    --color-btn-danger-text: white;
+
+    --color-btn-outline-secondary: #6c757d; /* Bootstrap Gray */
+    --color-btn-outline-secondary-hover: #5c636a; /* Darker Gray */
+    --color-btn-outline-secondary-text: var(--color-btn-outline-secondary); /* Text color matches border */
+    --color-btn-outline-secondary-hover-text: white; /* Text becomes white on hover */
+    --color-btn-outline-secondary-hover-bg: var(--color-btn-outline-secondary-hover); /* Background becomes solid gray */
+
+    /* Chart Colors (Light) */
+    --color-primary: #0d6efd; /* General primary accent */
+    --color-danger: #dc3545; /* General danger accent */
+    --color-grid: #e0e0e0;
+    --color-chart-area: rgba(70, 130, 180, 0.3); /* PDF Area */
+    --color-chart-line: steelblue;            /* PDF Line */
+    --color-mean-line: red;
+    --color-stddev-line: blue;
 }
 
+/* Dark mode color variables */
+body.dark-mode {
+    /* Primary colors */
+    --color-bg-primary: #121212;
+    --color-bg-secondary: #1e1e1e;
+    --color-text-primary: #e0e0e0;
+    --color-text-secondary: #8a8d93;
+    --color-text-muted: #737373;
+    --color-border: #2c2c2c;
+    --color-border-dark: #3c3c3c;
+    --color-hover-bg: #2a2a2a;      /* Hover background color */
+    --color-grid: #2c2c2c;          /* Grid lines color */
+
+    /* Chart colors */
+    --color-chart-area: rgba(253, 165, 9, 0.15); /* Semi-transparent orange area (PDF) */
+    --color-chart-line: #fda509;    /* Vibrant orange (PDF) */
+    --color-mean-line: #ff6b6b;     /* Soft red for mean line */
+    --color-stddev-line: #748ffc;   /* Soft purple for std dev lines */
+
+    /* Controls */
+    --color-slider-thumb: var(--color-chart-line); /* Match chart line color (orange) */
+    --color-slider-track: #3c3c3c;  /* Darker track for contrast */
+
+    /* Button Colors (Dark Mode) */
+    --color-btn-primary: var(--color-chart-line); /* Orange to match chart */
+    --color-btn-primary-hover: #e09108;          /* Darker Orange */
+    --color-btn-primary-text: #121212;           /* Dark text for contrast on orange */
+
+    --color-btn-danger: var(--color-mean-line);   /* Red to match chart */
+    --color-btn-danger-hover: #e05c5c;           /* Darker Red */
+    --color-btn-danger-text: #f0f0f0;            /* Light text */
+
+    /* Outline secondary (Theme Toggle, Reset) */
+    --color-btn-outline-secondary: var(--color-text-secondary); /* Use secondary text color for border/text */
+    --color-btn-outline-secondary-hover: var(--color-text-muted); /* Use muted text color for darker border/text on hover */
+    --color-btn-outline-secondary-text: var(--color-btn-outline-secondary);
+    --color-btn-outline-secondary-hover-text: var(--color-text-primary); /* Text becomes primary light on hover */
+    --color-btn-outline-secondary-hover-bg: var(--color-hover-bg); /* Use standard hover background */
+}
+
+/* Base Body Styles */
+body {
+    min-height: 100vh;
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-primary);
+    transition: background-color 0.3s, color 0.3s;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* Add a default font stack */
+    line-height: 1.5;
+}
+
+/* Sidebar Styles */
 .sidebar {
-    background-color: #f8f9fa;
+    background-color: var(--color-bg-secondary);
     height: 100vh;
     position: fixed;
     top: 0;
     left: 0;
     padding-top: 20px;
-    border-right: 1px solid #dee2e6;
+    border-right: 1px solid var(--color-border);
     z-index: 100;
     overflow-y: auto;
+    transition: background-color 0.3s, border-color 0.3s;
 }
 
+/* Navigation Styles */
 .nav-link {
-    color: #495057;
+    color: var(--color-text-muted);
     border-radius: 0.25rem;
     margin-bottom: 5px;
+    transition: background-color 0.2s, color 0.2s;
 }
 
 .nav-link:hover {
-    background-color: #e9ecef;
+    background-color: var(--color-hover-bg);
+    color: var(--color-text-primary); /* Make text primary on hover */
 }
 
 .nav-link.active {
-    background-color: #0d6efd;
+    background-color: var(--color-primary);
     color: white;
 }
 
+/* Content Area */
 .content {
     padding: 20px;
 }
@@ -36,179 +131,37 @@ body {
 .nav-header {
     font-weight: 500;
     padding: 0.5rem 1rem;
-    color: #6c757d;
+    color: var(--color-text-secondary);
     font-size: 0.875rem;
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
 
+/* Distribution Navigation */
 .distributions-nav {
-    border-top: 1px solid #dee2e6;
+    border-top: 1px solid var(--color-border);
     margin-top: 0.5rem;
     padding-top: 0.5rem;
 }
 
+/* Button Section */
 .button-section {
-    background-color: #f8f9fa;
-    border-bottom: 1px solid #dee2e6;
+    background-color: var(--color-bg-secondary);
+    border-bottom: 1px solid var(--color-border);
     padding: 15px 0;
     margin-bottom: 20px;
+    transition: background-color 0.3s, border-color 0.3s;
 }
 
-#simulation-canvas {
-    display: block;
-    margin: 0 auto;
-    background-color: #f8f9fa;
-    border: 1px solid #dee2e6;
-}
-
-.slider-container {
-    margin-bottom: 15px;
-}
-
-.slider-container label {
-    display: block;
-    margin-bottom: 5px;
-}
-
-.slider-value {
-    display: inline-block;
-    width: 50px;
-    text-align: right;
-    margin-left: 10px;
-}
-
-.chart-container {
-    height: 250px;
-    position: relative;
-}
-
-
-#pdfChart.chart-container {
-    height: 250px;
-}
-
-
-#distributionChart.chart-container {
-    height: 250px;
-}
-
-
-#histogramChart.chart-container {
-    height: 250px;
-}
-
-
-body.dark-mode {
-    background-color: #121212;
-    color: #e0e0e0;
-}
-
-body.dark-mode .sidebar {
-    background-color: #1e1e1e;
-    border-right-color: #333;
-}
-
-body.dark-mode .nav-link {
-    color: #b0b0b0;
-}
-
-body.dark-mode .nav-link:hover {
-    background-color: #2a2a2a;
-}
-
-body.dark-mode .nav-link.active {
-    background-color: #0d6efd;
-    color: white;
-}
-
-body.dark-mode .card {
-    background-color: #1e1e1e;
-    border-color: #333;
-}
-
-body.dark-mode .card-header {
-    background-color: #252525;
-    border-bottom-color: #333;
-}
-
-body.dark-mode .button-section {
-    background-color: #1e1e1e;
-    border-bottom-color: #333;
-}
-
-body.dark-mode #simulation-canvas {
-    background-color: #1e1e1e;
-    border-color: #333;
-}
-
-body.dark-mode .slider-container label {
-    color: #b0b0b0;
-}
-
-body.dark-mode .nav-header {
-    color: #909090;
-}
-
-body.dark-mode .form-range::-webkit-slider-thumb {
-    background-color: #0d6efd;
-}
-
-body.dark-mode .form-select {
-    background-color: #2a2a2a;
-    color: #e0e0e0;
-    border-color: #444;
-}
-
-body.dark-mode .form-select option {
-    background-color: #2a2a2a;
-    color: #e0e0e0;
-}
-
-
-body.dark-mode .card-header {
-    background-color: #252525;
-    border-bottom-color: #333;
-    color: #e0e0e0;
-}
-
-body.dark-mode .card-body {
-    background-color: #1e1e1e;
-    color: #e0e0e0;
-}
-
-body.dark-mode .card-title {
-    color: #e0e0e0;
-}
-
-
-body.dark-mode .button-section {
-    background-color: #1e1e1e;
-    border-bottom-color: #333;
-}
-
-
-body.dark-mode .sidebar h4 {
-    color: #e0e0e0;
-}
-
-body.dark-mode .statistics p {
-    color: #b0b0b0;
-}
-
-
-body.dark-mode .btn-outline-secondary {
-    color: #b0b0b0;
-    border-color: #555;
-}
-
-body.dark-mode .btn-outline-secondary:hover {
-    background-color: #333;
-    color: #e0e0e0;
+/* Slider Styling */
+.form-range {
+    background-color: transparent; /* Track color set below */
+    padding: 0; /* Remove default padding if any */
+    height: 1rem; /* Ensure enough clickable area */
 }
 
 .form-range::-webkit-slider-thumb {
-    background-color: #0d6efd;
+    background-color: var(--color-slider-thumb);
     border: 0;
     border-radius: 1rem;
     -webkit-appearance: none;
@@ -216,121 +169,370 @@ body.dark-mode .btn-outline-secondary:hover {
     width: 1rem;
     height: 1rem;
     cursor: pointer;
+    margin-top: -0.25rem; /* Center thumb vertically on the track */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .form-range::-moz-range-thumb {
-    background-color: #0d6efd;
+    background-color: var(--color-slider-thumb);
     border: 0;
     border-radius: 1rem;
-    -moz-appearance: none;
     appearance: none;
     width: 1rem;
     height: 1rem;
     cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-
 .form-range::-webkit-slider-runnable-track {
-    background-color: #dee2e6;
-    border-radius: 0.25rem;
+    width: 100%;
     height: 0.5rem;
+    cursor: pointer;
+    background-color: var(--color-slider-track);
+    border-radius: 0.25rem;
+    border: 1px solid var(--color-border-dark); /* Add subtle border */
+    transition: background-color 0.3s;
 }
 
 .form-range::-moz-range-track {
-    background-color: #dee2e6;
-    border-radius: 0.25rem;
+    width: 100%;
     height: 0.5rem;
+    cursor: pointer;
+    background-color: var(--color-slider-track);
+    border-radius: 0.25rem;
+    border: 1px solid var(--color-border-dark); /* Add subtle border */
+    transition: background-color 0.3s;
 }
 
-
-body.dark-mode .form-range::-webkit-slider-runnable-track {
-    background-color: #444;
+/* Button Styling - Using Variables */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        color 0.2s ease,
+        box-shadow 0.2s ease; /* Add box-shadow transition */
+     font-weight: 500; /* Slightly bolder */
 }
 
-body.dark-mode .form-range::-moz-range-track {
-    background-color: #444;
+.btn-primary {
+    background-color: var(--color-btn-primary);
+    border-color: var(--color-btn-primary);
+    color: var(--color-btn-primary-text);
+}
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: var(--color-btn-primary-hover);
+    border-color: var(--color-btn-primary-hover);
+    color: var(--color-btn-primary-text);
 }
 
+.btn-danger {
+    background-color: var(--color-btn-danger);
+    border-color: var(--color-btn-danger);
+    color: var(--color-btn-danger-text);
+}
+.btn-danger:hover,
+.btn-danger:focus {
+    background-color: var(--color-btn-danger-hover);
+    border-color: var(--color-btn-danger-hover);
+    color: var(--color-btn-danger-text);
+}
 
-.copyright-text {
-    color: #6c757d; 
-    font-size: 0.8rem;
+.btn-outline-secondary {
+    background-color: transparent;
+    color: var(--color-btn-outline-secondary-text);
+    border-color: var(--color-btn-outline-secondary);
+}
+.btn-outline-secondary:hover,
+.btn-outline-secondary:focus {
+    background-color: var(--color-btn-outline-secondary-hover-bg);
+    border-color: var(--color-btn-outline-secondary-hover);
+    color: var(--color-btn-outline-secondary-hover-text);
+}
+
+/* Canvas Styles */
+#simulation-canvas {
+    display: block;
+    margin: 0 auto;
+    background-color: var(--color-bg-secondary); /* Match card background */
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    transition: background-color 0.3s, border-color 0.3s;
+    max-width: 100%; /* Ensure canvas doesn't overflow container */
+    height: auto; /* Adjust if fixed height is needed */
+}
+
+/* Slider Container Styles */
+.slider-container {
+    margin-bottom: 15px;
+}
+
+.slider-container label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--color-text-primary);
+    transition: color 0.3s;
+    font-size: 0.9rem; /* Slightly smaller label */
+}
+
+.slider-value {
+    display: inline-block; /* Changed to inline-block */
+    min-width: 35px; /* Ensure space for numbers */
+    text-align: right;
+    margin-left: 8px; /* Space between label text and value */
+    font-weight: 500; /* Make value stand out */
+    background-color: var(--color-bg-primary); /* Match main background */
+    padding: 0 4px; /* Small padding */
+    border-radius: 3px; /* Rounded corners */
+    border: 1px solid var(--color-border); /* Subtle border */
+}
+
+/* Chart Styles */
+.chart-container {
+    height: 250px; /* Adjust as needed */
+    position: relative;
+    transition: background-color 0.3s;
+    overflow: hidden; /* Hide any overflow from chart elements */
+}
+
+/* Card Styles */
+.card {
+    background-color: var(--color-bg-secondary);
+    border: 1px solid var(--color-border); /* Explicitly set border */
+    transition: background-color 0.3s, border-color 0.3s;
+    border-radius: 0.375rem; /* Bootstrap's default card radius */
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05); /* Subtle shadow */
+}
+body.dark-mode .card {
+     box-shadow: 0 1px 3px rgba(255,255,255,0.05); /* Lighter shadow for dark mode */
+}
+
+.card-header {
+    background-color: var(--color-bg-secondary); /* Match card body */
+    border-bottom: 1px solid var(--color-border);
+    color: var(--color-text-primary);
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+    padding: 0.75rem 1rem; /* Adjust padding */
     font-weight: 500;
 }
 
+.card-body {
+    /* background-color is inherited or can be set explicitly */
+    color: var(--color-text-primary);
+    transition: background-color 0.3s, color 0.3s;
+    padding: 1rem; /* Adjust padding */
+}
 
-body.dark-mode .copyright-text {
-    color: #adb5bd; 
+/* Interaction States */
+.form-range:focus::-webkit-slider-thumb,
+.form-range:focus::-moz-range-thumb {
+    box-shadow:
+        0 0 0 3px rgba(13, 110, 253, 0.25), /* Bootstrap focus ring color */
+        0 2px 4px rgba(0,0,0,0.2);
+}
+body.dark-mode .form-range:focus::-webkit-slider-thumb,
+body.dark-mode .form-range:focus::-moz-range-thumb {
+     box-shadow:
+        0 0 0 3px rgba(253, 165, 9, 0.3), /* Orange focus ring for dark mode */
+        0 2px 4px rgba(0,0,0,0.4); /* Darker shadow */
+}
+
+.btn:focus {
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25); /* Default focus */
+    outline: none;
+}
+.btn-primary:focus {
+     box-shadow: 0 0 0 0.25rem var(--color-btn-primary, rgba(13, 110, 253, 0.5)) !important;
+}
+.btn-danger:focus {
+     box-shadow: 0 0 0 0.25rem var(--color-btn-danger, rgba(220, 53, 69, 0.5)) !important;
+}
+.btn-outline-secondary:focus {
+     box-shadow: 0 0 0 0.25rem var(--color-btn-outline-secondary, rgba(108, 117, 125, 0.5)) !important;
+}
+body.dark-mode .btn:focus {
+     box-shadow: 0 0 0 0.25rem rgba(253, 165, 9, 0.3); /* Orange focus for dark mode */
 }
 
 
-body.dark-mode .sidebar {
-    background-color: #1e1e1e;
+.btn i, .btn .theme-icon {
+    margin-right: 0.4rem; /* Adjust space */
+    font-size: 0.9em; /* Slightly smaller icon */
+}
+
+/* Form Select Styles */
+.form-select {
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-primary);
+    border-color: var(--color-border-dark);
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+.form-select:focus {
+    border-color: var(--color-primary); /* Use primary accent color */
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+body.dark-mode .form-select {
+    background-color: var(--color-bg-secondary);
+    border-color: var(--color-border-dark);
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%238a8d93' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e"); /* Dark mode arrow */
+}
+body.dark-mode .form-select:focus {
+     border-color: var(--color-chart-line); /* Orange border on focus */
+     box-shadow: 0 0 0 0.25rem rgba(253, 165, 9, 0.3); /* Orange focus ring */
 }
 
 
-body.dark-mode .sidebar > div:last-child {
-    background-color: #1e1e1e;
+/* Footer Styles */
+.copyright-text {
+    color: var(--color-text-secondary);
+    font-size: 0.8rem;
+    font-weight: 400; /* Normal weight */
 }
 
-
+/* Modal Styles */
 .modal-content {
-    background-color: #ffffff;
-    color: #000000;
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-primary);
+    border: 1px solid var(--color-border); /* Use regular border */
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
 }
-
 .modal-header {
-    border-bottom: 1px solid #e9ecef;
+    border-bottom: 1px solid var(--color-border);
+    transition: border-color 0.3s;
 }
-
 .modal-footer {
-    border-top: 1px solid #e9ecef;
+    border-top: 1px solid var(--color-border);
+    transition: border-color 0.3s;
 }
-
-
 body.dark-mode .modal-content {
-    background-color: #1e1e1e;
-    color: #e0e0e0;
-    border-color: #333;
+    border: 1px solid var(--color-border-dark);
 }
-
 body.dark-mode .modal-header {
-    border-bottom-color: #333;
+     border-bottom: 1px solid var(--color-border-dark);
 }
-
 body.dark-mode .modal-footer {
-    border-top-color: #333;
-}
-
-body.dark-mode .modal-title {
-    color: #e0e0e0;
-}
-
-body.dark-mode .modal-body {
-    color: #b0b0b0;
-}
-
-body.dark-mode .modal-body ol {
-    color: #b0b0b0;
+     border-top: 1px solid var(--color-border-dark);
 }
 
 
-body.dark-mode .modal .btn-secondary {
-    background-color: #555;
-    color: #e0e0e0;
-    border-color: #666;
+/* Accessibility and Keyboard Navigation */
+/* Use :focus-visible for modern browsers */
+.nav-link:focus-visible,
+.btn:focus-visible,
+.form-select:focus-visible,
+.form-range:focus-visible {
+    /* Rely on the specific .btn:focus, .form-select:focus etc. styles for the visual ring */
+    outline: none; /* Remove default outline if custom shadows are applied */
 }
 
-body.dark-mode .modal .btn-secondary:hover {
-    background-color: #666;
+/* Chart SVG Element Styling */
+body.dark-mode .x-axis-label,
+body.dark-mode .y-axis-label,
+body.dark-mode .stats-text,
+body.dark-mode .tick text {
+    fill: var(--color-text-primary) !important; /* Ensure text is light */
 }
 
+body.dark-mode .domain,
+body.dark-mode .tick line {
+    stroke: var(--color-axisColor) !important; /* Use defined axis color */
+}
+
+body.dark-mode .chart-background {
+    fill: var(--color-bg-secondary) !important; /* Match card background */
+}
+
+body.dark-mode .pdf-line {
+    stroke: var(--color-chart-line) !important; /* Use orange line color */
+}
+
+body.dark-mode .pdf-area {
+    fill: var(--color-chart-area) !important; /* Use transparent orange */
+}
+
+/* Responsive Design */
 @media (max-width: 767.98px) {
     .sidebar {
         position: static;
         height: auto;
         border-right: none;
-        border-bottom: 1px solid #dee2e6;
+        border-bottom: 1px solid var(--color-border);
         margin-bottom: 20px;
+        overflow-y: visible; /* Allow content to expand */
+    }
+    .content {
+        padding: 15px; /* Reduce padding on small screens */
+    }
+    .chart-container {
+        height: 200px; /* Reduce chart height */
+    }
+    .button-section .d-flex {
+        flex-direction: column; /* Stack buttons */
+        align-items: stretch !important; /* Make buttons full width */
+    }
+     .button-section .d-flex > div {
+        margin-bottom: 10px;
+        display: flex;
+        justify-content: center; /* Center buttons in their div */
+     }
+    .button-section .d-flex > div:last-child {
+        margin-bottom: 0;
+    }
+    .btn {
+        width: auto; /* Allow buttons to size naturally */
+        margin: 0 5px; /* Add spacing between buttons */
+    }
+    #themeToggleBtn {
+        margin-top: 10px; /* Space theme toggle */
     }
 }
+
+/* Performance and Rendering Optimizations */
+/* Apply transitions selectively */
+.chart-container svg * {
+    /* Consider removing will-change if not causing performance issues */
+    /* transition: all 0.3s ease; */ /* Apply transitions more specifically */
+}
+.chart-container svg .bar,
+.chart-container svg .pdf-line,
+.chart-container svg .pdf-area,
+.chart-container svg .axis-group > *, /* Target axis elements */
+.chart-container svg .stats-group > * { /* Target stats elements */
+    transition: all 0.3s ease;
+}
+
+
+/* Ensure high contrast and visibility (already handled by focus styles) */
+
+/* Remove potentially conflicting track styles */
+/*
+.form-range::-webkit-slider-runnable-track {
+    background-color: #adb5bd !important;
+    height: 0.5rem !important;
+    border-radius: 0.25rem !important;
+    border: 1px solid #6c757d !important;
+}
+.form-range::-moz-range-track {
+    background-color: #adb5bd !important;
+    height: 0.5rem !important;
+    border-radius: 0.25rem !important;
+    border: 1px solid #6c757d !important;
+}
+*/
+
+/* Fix statistics text alignment */
+.statistics {
+    text-align: left; /* Align text left */
+    padding-left: 0; /* Remove default padding if any */
+}
+
+.statistics p {
+    margin-bottom: 0.3rem; /* Reduce space between stat lines */
+}
+
+/* END OF FILE index.css */
