@@ -298,7 +298,7 @@ drawBarChart(svg, data, xScale, yScale, height, width, colorFn = null) {
             if (isNaN(d.value) || d.value <= 0) return this.app.isDarkMode ? "#444" : "#ddd";
             const intensity = 0.3 + (d.value / maxValue) * 0.7;
             return this.app.isDarkMode ?
-                d3.interpolateInferno(intensity) :
+                d3.interpolatePlasma(intensity) :
                 d3.interpolateBlues(intensity);
         };
     }
@@ -541,7 +541,7 @@ drawBarChart(svg, data, xScale, yScale, height, width, colorFn = null) {
         const maxVal = d3.max(data, d => d.value) || 0.01;
         const intensity = 0.3 + d.value / maxVal * 0.7;
         return this.app.isDarkMode ? 
-          d3.interpolateInferno(intensity) :
+          d3.interpolatePlasma(intensity) :
           d3.interpolateBlues(intensity);
       };
       
@@ -674,7 +674,7 @@ updateHistogramChart() {
         if (isNaN(d.value) || d.value <= 0) return this.app.isDarkMode ? "#444" : "#ddd";
         const intensity = maxValue > 0 ? 0.3 + (d.value / maxValue) * 0.7 : 0.3;
         return this.app.isDarkMode ?
-        d3.interpolateInferno(intensity) :
+        d3.interpolatePlasma(intensity) :
         d3.interpolateBlues(intensity);
     };
 

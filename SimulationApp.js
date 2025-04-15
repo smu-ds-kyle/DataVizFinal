@@ -212,7 +212,6 @@ class SimulationApp {
 
                 this.isUniformDist = true;
                 if (typeof this.updateMinMaxRelationship === 'function') {
-                    console.log("Uniform selected, triggering updateMinMaxRelationship...");
                     this.updateMinMaxRelationship();
                 } else {
                     console.warn("updateMinMaxRelationship function not found.");

@@ -498,8 +498,6 @@ default: {
     }
     
     getDistributionRange(distribution, config) {
-        console.log(distribution)
-        console.log(config)
         const cacheKey = `range-${distribution}-${JSON.stringify(config[distribution])}`;
         if (this.cachedRanges[cacheKey]) {
             return this.cachedRanges[cacheKey];

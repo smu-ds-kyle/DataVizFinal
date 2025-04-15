@@ -1,8 +1,5 @@
-/* START OF FILE index.css */
 
-/* Color Variables and Theme Management */
 :root {
-    /* Light mode colors */
     --color-bg-primary: #ffffff;
     --color-bg-secondary: #f8f9fa;
     --color-text-primary: #212529;
@@ -10,40 +7,35 @@
     --color-text-muted: #495057;
     --color-border: #dee2e6;
     --color-border-dark: #ced4da;
-    --color-hover-bg: #e9ecef;      /* Hover background color */
+    --color-hover-bg: #e9ecef;
 
-    /* Slider Colors (Light) */
-    --color-slider-thumb: #0d6efd;  /* Primary blue */
-    --color-slider-track: #adb5bd; /* Light Gray track */
+    --color-slider-thumb: #0d6efd;
+    --color-slider-track: #adb5bd;
 
-    /* Button Colors (Light Mode) */
-    --color-btn-primary: #0d6efd;         /* Bootstrap Blue */
-    --color-btn-primary-hover: #0b5ed7;   /* Darker Blue */
+    --color-btn-primary: #0d6efd;
+    --color-btn-primary-hover: #0b5ed7;
     --color-btn-primary-text: white;
 
-    --color-btn-danger: #dc3545;          /* Bootstrap Red */
-    --color-btn-danger-hover: #bb2d3b;    /* Darker Red */
+    --color-btn-danger: #dc3545;
+    --color-btn-danger-hover: #bb2d3b;
     --color-btn-danger-text: white;
 
-    --color-btn-outline-secondary: #6c757d; /* Bootstrap Gray */
-    --color-btn-outline-secondary-hover: #5c636a; /* Darker Gray */
-    --color-btn-outline-secondary-text: var(--color-btn-outline-secondary); /* Text color matches border */
-    --color-btn-outline-secondary-hover-text: white; /* Text becomes white on hover */
-    --color-btn-outline-secondary-hover-bg: var(--color-btn-outline-secondary-hover); /* Background becomes solid gray */
+    --color-btn-outline-secondary: #6c757d;
+    --color-btn-outline-secondary-hover: #5c636a;
+    --color-btn-outline-secondary-text: var(--color-btn-outline-secondary);
+    --color-btn-outline-secondary-hover-text: white;
+    --color-btn-outline-secondary-hover-bg: var(--color-btn-outline-secondary-hover);
 
-    /* Chart Colors (Light) */
-    --color-primary: #0d6efd; /* General primary accent */
-    --color-danger: #dc3545; /* General danger accent */
+    --color-primary: #0d6efd;
+    --color-danger: #dc3545;
     --color-grid: #e0e0e0;
-    --color-chart-area: rgba(70, 130, 180, 0.3); /* PDF Area */
-    --color-chart-line: steelblue;            /* PDF Line */
+    --color-chart-area: rgba(70, 130, 180, 0.3);
+    --color-chart-line: steelblue;
     --color-mean-line: red;
     --color-stddev-line: blue;
 }
 
-/* Dark mode color variables */
 body.dark-mode {
-    /* Primary colors */
     --color-bg-primary: #121212;
     --color-bg-secondary: #1e1e1e;
     --color-text-primary: #e0e0e0;
@@ -51,47 +43,42 @@ body.dark-mode {
     --color-text-muted: #737373;
     --color-border: #2c2c2c;
     --color-border-dark: #3c3c3c;
-    --color-hover-bg: #2a2a2a;      /* Hover background color */
-    --color-grid: #2c2c2c;          /* Grid lines color */
+    --color-hover-bg: #2a2a2a;
+    --color-grid: #2c2c2c;
 
-    /* Chart colors */
-    --color-chart-area: rgba(253, 165, 9, 0.15); /* Semi-transparent orange area (PDF) */
-    --color-chart-line: #fda509;    /* Vibrant orange (PDF) */
-    --color-mean-line: #ff6b6b;     /* Soft red for mean line */
-    --color-stddev-line: #748ffc;   /* Soft purple for std dev lines */
+    --color-chart-area: rgba(253, 165, 9, 0.15);
+    --color-chart-line: #fda509;
+    --color-mean-line: #b02990;
+    --color-stddev-line: #748ffc;
 
-    /* Controls */
-    --color-slider-thumb: var(--color-chart-line); /* Match chart line color (orange) */
-    --color-slider-track: #3c3c3c;  /* Darker track for contrast */
+    --color-slider-thumb: var(--color-chart-line);
+    --color-slider-track: #3c3c3c;
 
-    /* Button Colors (Dark Mode) */
-    --color-btn-primary: var(--color-chart-line); /* Orange to match chart */
-    --color-btn-primary-hover: #e09108;          /* Darker Orange */
-    --color-btn-primary-text: #121212;           /* Dark text for contrast on orange */
+    --color-btn-primary: var(--color-chart-line);
+    --color-btn-primary-hover: #e09108;
+    --color-btn-primary-text: white;
+    
 
-    --color-btn-danger: var(--color-mean-line);   /* Red to match chart */
-    --color-btn-danger-hover: #e05c5c;           /* Darker Red */
-    --color-btn-danger-text: #f0f0f0;            /* Light text */
+    --color-btn-danger: var(--color-mean-line);
+    --color-btn-danger-hover: #e05c5c;
+    --color-btn-danger-text: #f0f0f0;
 
-    /* Outline secondary (Theme Toggle, Reset) */
-    --color-btn-outline-secondary: var(--color-text-secondary); /* Use secondary text color for border/text */
-    --color-btn-outline-secondary-hover: var(--color-text-muted); /* Use muted text color for darker border/text on hover */
+    --color-btn-outline-secondary: var(--color-text-secondary);
+    --color-btn-outline-secondary-hover: var(--color-text-muted);
     --color-btn-outline-secondary-text: var(--color-btn-outline-secondary);
-    --color-btn-outline-secondary-hover-text: var(--color-text-primary); /* Text becomes primary light on hover */
-    --color-btn-outline-secondary-hover-bg: var(--color-hover-bg); /* Use standard hover background */
+    --color-btn-outline-secondary-hover-text: var(--color-text-primary);
+    --color-btn-outline-secondary-hover-bg: var(--color-hover-bg);
 }
 
-/* Base Body Styles */
 body {
     min-height: 100vh;
     background-color: var(--color-bg-primary);
     color: var(--color-text-primary);
     transition: background-color 0.3s, color 0.3s;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* Add a default font stack */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     line-height: 1.5;
 }
 
-/* Sidebar Styles */
 .sidebar {
     background-color: var(--color-bg-secondary);
     height: 100vh;
@@ -105,7 +92,6 @@ body {
     transition: background-color 0.3s, border-color 0.3s;
 }
 
-/* Navigation Styles */
 .nav-link {
     color: var(--color-text-muted);
     border-radius: 0.25rem;
@@ -115,7 +101,7 @@ body {
 
 .nav-link:hover {
     background-color: var(--color-hover-bg);
-    color: var(--color-text-primary); /* Make text primary on hover */
+    color: var(--color-text-primary);
 }
 
 .nav-link.active {
@@ -123,7 +109,6 @@ body {
     color: white;
 }
 
-/* Content Area */
 .content {
     padding: 20px;
 }
@@ -137,14 +122,12 @@ body {
     letter-spacing: 0.5px;
 }
 
-/* Distribution Navigation */
 .distributions-nav {
     border-top: 1px solid var(--color-border);
     margin-top: 0.5rem;
     padding-top: 0.5rem;
 }
 
-/* Button Section */
 .button-section {
     background-color: var(--color-bg-secondary);
     border-bottom: 1px solid var(--color-border);
@@ -153,11 +136,10 @@ body {
     transition: background-color 0.3s, border-color 0.3s;
 }
 
-/* Slider Styling */
 .form-range {
-    background-color: transparent; /* Track color set below */
-    padding: 0; /* Remove default padding if any */
-    height: 1rem; /* Ensure enough clickable area */
+    background-color: transparent;
+    padding: 0;
+    height: 1rem;
 }
 
 .form-range::-webkit-slider-thumb {
@@ -169,7 +151,7 @@ body {
     width: 1rem;
     height: 1rem;
     cursor: pointer;
-    margin-top: -0.25rem; /* Center thumb vertically on the track */
+    margin-top: -0.25rem;
     box-shadow: 0 2px 4px rgba(0,0,0,0.2);
     transition: background-color 0.2s ease, box-shadow 0.2s ease;
 }
@@ -192,7 +174,7 @@ body {
     cursor: pointer;
     background-color: var(--color-slider-track);
     border-radius: 0.25rem;
-    border: 1px solid var(--color-border-dark); /* Add subtle border */
+    border: 1px solid var(--color-border-dark);
     transition: background-color 0.3s;
 }
 
@@ -202,11 +184,10 @@ body {
     cursor: pointer;
     background-color: var(--color-slider-track);
     border-radius: 0.25rem;
-    border: 1px solid var(--color-border-dark); /* Add subtle border */
+    border: 1px solid var(--color-border-dark);
     transition: background-color 0.3s;
 }
 
-/* Button Styling - Using Variables */
 .btn {
     display: inline-flex;
     align-items: center;
@@ -215,8 +196,8 @@ body {
         background-color 0.2s ease,
         border-color 0.2s ease,
         color 0.2s ease,
-        box-shadow 0.2s ease; /* Add box-shadow transition */
-     font-weight: 500; /* Slightly bolder */
+        box-shadow 0.2s ease;
+     font-weight: 500;
 }
 
 .btn-primary {
@@ -255,19 +236,17 @@ body {
     color: var(--color-btn-outline-secondary-hover-text);
 }
 
-/* Canvas Styles */
 #simulation-canvas {
     display: block;
     margin: 0 auto;
-    background-color: var(--color-bg-secondary); /* Match card background */
+    background-color: var(--color-bg-secondary);
     border: 1px solid var(--color-border);
     border-radius: 4px;
     transition: background-color 0.3s, border-color 0.3s;
-    max-width: 100%; /* Ensure canvas doesn't overflow container */
-    height: auto; /* Adjust if fixed height is needed */
+    max-width: 100%;
+    height: auto;
 }
 
-/* Slider Container Styles */
 .slider-container {
     margin-bottom: 15px;
 }
@@ -277,73 +256,69 @@ body {
     margin-bottom: 5px;
     color: var(--color-text-primary);
     transition: color 0.3s;
-    font-size: 0.9rem; /* Slightly smaller label */
+    font-size: 0.9rem;
 }
 
 .slider-value {
-    display: inline-block; /* Changed to inline-block */
-    min-width: 35px; /* Ensure space for numbers */
+    display: inline-block;
+    min-width: 35px;
     text-align: right;
-    margin-left: 8px; /* Space between label text and value */
-    font-weight: 500; /* Make value stand out */
-    background-color: var(--color-bg-primary); /* Match main background */
-    padding: 0 4px; /* Small padding */
-    border-radius: 3px; /* Rounded corners */
-    border: 1px solid var(--color-border); /* Subtle border */
+    margin-left: 8px;
+    font-weight: 500;
+    background-color: var(--color-bg-primary);
+    padding: 0 4px;
+    border-radius: 3px;
+    border: 1px solid var(--color-border);
 }
 
-/* Chart Styles */
 .chart-container {
-    height: 250px; /* Adjust as needed */
+    height: 250px;
     position: relative;
     transition: background-color 0.3s;
-    overflow: hidden; /* Hide any overflow from chart elements */
+    overflow: hidden;
 }
 
-/* Card Styles */
 .card {
     background-color: var(--color-bg-secondary);
-    border: 1px solid var(--color-border); /* Explicitly set border */
+    border: 1px solid var(--color-border);
     transition: background-color 0.3s, border-color 0.3s;
-    border-radius: 0.375rem; /* Bootstrap's default card radius */
-    box-shadow: 0 1px 3px rgba(0,0,0,0.05); /* Subtle shadow */
+    border-radius: 0.375rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
 }
 body.dark-mode .card {
-     box-shadow: 0 1px 3px rgba(255,255,255,0.05); /* Lighter shadow for dark mode */
+     box-shadow: 0 1px 3px rgba(255,255,255,0.05);
 }
 
 .card-header {
-    background-color: var(--color-bg-secondary); /* Match card body */
+    background-color: var(--color-bg-secondary);
     border-bottom: 1px solid var(--color-border);
     color: var(--color-text-primary);
     transition: background-color 0.3s, border-color 0.3s, color 0.3s;
-    padding: 0.75rem 1rem; /* Adjust padding */
+    padding: 0.75rem 1rem;
     font-weight: 500;
 }
 
 .card-body {
-    /* background-color is inherited or can be set explicitly */
     color: var(--color-text-primary);
     transition: background-color 0.3s, color 0.3s;
-    padding: 1rem; /* Adjust padding */
+    padding: 1rem;
 }
 
-/* Interaction States */
 .form-range:focus::-webkit-slider-thumb,
 .form-range:focus::-moz-range-thumb {
     box-shadow:
-        0 0 0 3px rgba(13, 110, 253, 0.25), /* Bootstrap focus ring color */
+        0 0 0 3px rgba(13, 110, 253, 0.25),
         0 2px 4px rgba(0,0,0,0.2);
 }
 body.dark-mode .form-range:focus::-webkit-slider-thumb,
 body.dark-mode .form-range:focus::-moz-range-thumb {
      box-shadow:
-        0 0 0 3px rgba(253, 165, 9, 0.3), /* Orange focus ring for dark mode */
-        0 2px 4px rgba(0,0,0,0.4); /* Darker shadow */
+        0 0 0 3px rgba(253, 165, 9, 0.3),
+        0 2px 4px rgba(0,0,0,0.4);
 }
 
 .btn:focus {
-    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25); /* Default focus */
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
     outline: none;
 }
 .btn-primary:focus {
@@ -356,16 +331,15 @@ body.dark-mode .form-range:focus::-moz-range-thumb {
      box-shadow: 0 0 0 0.25rem var(--color-btn-outline-secondary, rgba(108, 117, 125, 0.5)) !important;
 }
 body.dark-mode .btn:focus {
-     box-shadow: 0 0 0 0.25rem rgba(253, 165, 9, 0.3); /* Orange focus for dark mode */
+     box-shadow: 0 0 0 0.25rem rgba(253, 165, 9, 0.3);
 }
 
 
 .btn i, .btn .theme-icon {
-    margin-right: 0.4rem; /* Adjust space */
-    font-size: 0.9em; /* Slightly smaller icon */
+    margin-right: 0.4rem;
+    font-size: 0.9em;
 }
 
-/* Form Select Styles */
 .form-select {
     background-color: var(--color-bg-primary);
     color: var(--color-text-primary);
@@ -373,32 +347,30 @@ body.dark-mode .btn:focus {
     transition: background-color 0.3s, color 0.3s, border-color 0.3s;
 }
 .form-select:focus {
-    border-color: var(--color-primary); /* Use primary accent color */
+    border-color: var(--color-primary);
     box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
 }
 body.dark-mode .form-select {
     background-color: var(--color-bg-secondary);
     border-color: var(--color-border-dark);
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%238a8d93' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e"); /* Dark mode arrow */
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%238a8d93' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
 }
 body.dark-mode .form-select:focus {
-     border-color: var(--color-chart-line); /* Orange border on focus */
-     box-shadow: 0 0 0 0.25rem rgba(253, 165, 9, 0.3); /* Orange focus ring */
+     border-color: var(--color-chart-line);
+     box-shadow: 0 0 0 0.25rem rgba(253, 165, 9, 0.3);
 }
 
 
-/* Footer Styles */
 .copyright-text {
     color: var(--color-text-secondary);
     font-size: 0.8rem;
-    font-weight: 400; /* Normal weight */
+    font-weight: 400;
 }
 
-/* Modal Styles */
 .modal-content {
     background-color: var(--color-bg-primary);
     color: var(--color-text-primary);
-    border: 1px solid var(--color-border); /* Use regular border */
+    border: 1px solid var(--color-border);
     transition: background-color 0.3s, color 0.3s, border-color 0.3s;
 }
 .modal-header {
@@ -420,42 +392,37 @@ body.dark-mode .modal-footer {
 }
 
 
-/* Accessibility and Keyboard Navigation */
-/* Use :focus-visible for modern browsers */
 .nav-link:focus-visible,
 .btn:focus-visible,
 .form-select:focus-visible,
 .form-range:focus-visible {
-    /* Rely on the specific .btn:focus, .form-select:focus etc. styles for the visual ring */
-    outline: none; /* Remove default outline if custom shadows are applied */
+    outline: none;
 }
 
-/* Chart SVG Element Styling */
 body.dark-mode .x-axis-label,
 body.dark-mode .y-axis-label,
 body.dark-mode .stats-text,
 body.dark-mode .tick text {
-    fill: var(--color-text-primary) !important; /* Ensure text is light */
+    fill: var(--color-text-primary) !important;
 }
 
 body.dark-mode .domain,
 body.dark-mode .tick line {
-    stroke: var(--color-axisColor) !important; /* Use defined axis color */
+    stroke: var(--color-axisColor) !important;
 }
 
 body.dark-mode .chart-background {
-    fill: var(--color-bg-secondary) !important; /* Match card background */
+    fill: var(--color-bg-secondary) !important;
 }
 
 body.dark-mode .pdf-line {
-    stroke: var(--color-chart-line) !important; /* Use orange line color */
+    stroke: var(--color-chart-line) !important;
 }
 
 body.dark-mode .pdf-area {
-    fill: var(--color-chart-area) !important; /* Use transparent orange */
+    fill: var(--color-chart-area) !important;
 }
 
-/* Responsive Design */
 @media (max-width: 767.98px) {
     .sidebar {
         position: static;
@@ -463,76 +430,54 @@ body.dark-mode .pdf-area {
         border-right: none;
         border-bottom: 1px solid var(--color-border);
         margin-bottom: 20px;
-        overflow-y: visible; /* Allow content to expand */
+        overflow-y: visible;
     }
     .content {
-        padding: 15px; /* Reduce padding on small screens */
+        padding: 15px;
     }
     .chart-container {
-        height: 200px; /* Reduce chart height */
+        height: 200px;
     }
     .button-section .d-flex {
-        flex-direction: column; /* Stack buttons */
-        align-items: stretch !important; /* Make buttons full width */
+        flex-direction: column;
+        align-items: stretch !important;
     }
      .button-section .d-flex > div {
         margin-bottom: 10px;
         display: flex;
-        justify-content: center; /* Center buttons in their div */
+        justify-content: center;
      }
     .button-section .d-flex > div:last-child {
         margin-bottom: 0;
     }
     .btn {
-        width: auto; /* Allow buttons to size naturally */
-        margin: 0 5px; /* Add spacing between buttons */
+        width: auto;
+        margin: 0 5px;
     }
     #themeToggleBtn {
-        margin-top: 10px; /* Space theme toggle */
+        margin-top: 10px;
     }
 }
 
-/* Performance and Rendering Optimizations */
-/* Apply transitions selectively */
 .chart-container svg * {
-    /* Consider removing will-change if not causing performance issues */
-    /* transition: all 0.3s ease; */ /* Apply transitions more specifically */
 }
 .chart-container svg .bar,
 .chart-container svg .pdf-line,
 .chart-container svg .pdf-area,
-.chart-container svg .axis-group > *, /* Target axis elements */
-.chart-container svg .stats-group > * { /* Target stats elements */
+.chart-container svg .axis-group > *,
+.chart-container svg .stats-group > * {
     transition: all 0.3s ease;
 }
 
 
-/* Ensure high contrast and visibility (already handled by focus styles) */
 
-/* Remove potentially conflicting track styles */
-/*
-.form-range::-webkit-slider-runnable-track {
-    background-color: #adb5bd !important;
-    height: 0.5rem !important;
-    border-radius: 0.25rem !important;
-    border: 1px solid #6c757d !important;
-}
-.form-range::-moz-range-track {
-    background-color: #adb5bd !important;
-    height: 0.5rem !important;
-    border-radius: 0.25rem !important;
-    border: 1px solid #6c757d !important;
-}
-*/
 
-/* Fix statistics text alignment */
 .statistics {
-    text-align: left; /* Align text left */
-    padding-left: 0; /* Remove default padding if any */
+    text-align: left;
+    padding-left: 0;
 }
 
 .statistics p {
-    margin-bottom: 0.3rem; /* Reduce space between stat lines */
+    margin-bottom: 0.3rem;
 }
 
-/* END OF FILE index.css */
