@@ -643,7 +643,7 @@ if (this.uniformMin && this.uniformMax) {
     drawLaneLines() {
         if (!this.ctx || this.lanes.length <= 1) return;
 
-        this.ctx.strokeStyle = this.isDarkMode ? "#444" : "#dee2e6";
+        this.ctx.strokeStyle = this.isDarkMode ? "#555" : "#dee2e6";
         this.ctx.lineWidth = 1;
 
         this.lanes.forEach((lane, index) => {
@@ -730,7 +730,7 @@ let ballColor;
 const normalizedLane = this.config.numLanes > 1 ? laneIndex / (this.config.numLanes - 1) : 0.5;
 
 if (this.isDarkMode) {
-    ballColor = d3.interpolateInferno(normalizedLane * 0.9 + 0.1);
+    ballColor = d3.interpolatePlasma(normalizedLane * 0.9 + 0.1);
 } else {
     ballColor = d3.interpolateBlues(normalizedLane * 0.9 + 0.2);
 }
